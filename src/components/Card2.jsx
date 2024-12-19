@@ -1,5 +1,5 @@
-import { TextInput } from "./TextInput";
-export const StepTwo = ({ setCurrentStep, onChange, form, type }) => { 
+import { TextInput } from "./Input";
+export const Card2 = ({ setCurrentStep, onChange, form, type }) => { 
     return(
     <div className="pl-[30px] pt-[30px] bg-[#FFFFFF] text-black rounded-lg w-[480px] h-[655px] flex flex-col items-start">
         <img className="w-[60px] h-[60px]" src="/logo.svg" alt="mainLogo"></img>

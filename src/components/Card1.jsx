@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { TextInput } from "./TextInput";
+import { TextInput } from "./Input";
 
-export const StepOne = ({ setCurrentStep, onChange , form, type }) => {
+export const Card1 = ({ setCurrentStep, inputChange , form, type }) => {
 
 
     const validateFirstName =()=>{
@@ -27,31 +27,34 @@ export const StepOne = ({ setCurrentStep, onChange , form, type }) => {
             <h2 className="font-lg text-[#8E8E8E] -mt-[130px]">Please provide all current information accurately.</h2>
             <div className="-mt-[120px]">
             <h3 className="text-sm font-semibold text-[#8E8E8E] mt-[10px]">First Name *</h3>
-                <TextInput 
+                <input 
+                    className="text-black w-[416px] h-[44px] rounded-lg border-[#0CA5E9] border border-solid flex gap-3 bg-white pl-2 mb-4"
                     id="firstName" 
                     value={form.firstName} 
-                    onChange={onChange}  
+                    onChange={inputChange}  
                     placeholder={'Enter your firstname...'} 
                     type='text'
-                />
+                /> 
                 {form.firstName === '' && <p className="text-red-500 text-sm -mt-[12px]">Firstname cannot contain special characters or numbers.</p>}
             <h3 className="text-sm font-semibold text-[#8E8E8E] mt-[10px]">Last Name *</h3>
-                <TextInput 
+                <input 
+                    className="text-black w-[416px] h-[44px] rounded-lg border-[#0CA5E9] border border-solid flex gap-3 bg-white pl-2 mb-4"
                     id="lastName" 
                     value={form.lastName} 
-                    onChange={onChange} 
+                    onChange={inputChange} 
                     placeholder={'Enter your lastname...'} 
                     type='text' 
                 />
                 {form.lastName === ''  && <p className="text-red-500 text-sm -mt-[12px]">Firstname cannot contain special characters or numbers.</p>}
             <h3 className="text-sm font-semibold text-[#8E8E8E] mt-[10px]">Username *</h3>
-                <TextInput 
+                <input
+                    className="text-black w-[416px] h-[44px] rounded-lg border-[#0CA5E9] border border-solid flex gap-3 bg-white pl-2 mb-4"
                     id="userName" 
                     value={form.userName} 
-                    onChange={onChange} 
+                    onChange={inputChange} 
                     placeholder={'Enter your username...'}
                     type='text'
-                /> 
+                />  
                 {form.userName === ''  && <p className="text-red-500 text-sm -mt-[12px]">"This username is already taken. Please choose another one."</p>}
             </div> 
             <div className="flex justify-center bg-[#D6D8DB] text-[#334155] w-[416px] h-[44px] border border-[#D6D8DB] rounded-lg">

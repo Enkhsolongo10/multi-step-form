@@ -12,4 +12,4 @@ export const TextInput = ({ value, onChange , placeholder, type, id }) => {
             />
         </div> 
     );
-};
+}; 

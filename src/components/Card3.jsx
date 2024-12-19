@@ -1,6 +1,6 @@
-import { TextInput } from "./TextInput";
+import { TextInput } from "./Input";
 
-export const StepThree = ({ setCurrentStep, onChange, form, type }) => { 
+export const Card3 = ({ setCurrentStep, onChange, form, type }) => { 
     return(
         <div className="p-[32px] bg-[#FFFFFF] text-black rounded-lg w-[480px] h-[655px] flex flex-col justify-between">
             <img className="w-[60px] h-[60px]" src="/logo.svg" alt="mainLogo"></img>
