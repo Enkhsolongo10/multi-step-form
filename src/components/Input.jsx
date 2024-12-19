@@ -1,4 +1,4 @@
-export const TextInput = ({ value, onChange , placeholder, type, id }) => {
+export const Input = ({ value, onChange , placeholder, type, id }) => {
     return (
         <div className="text-black w-[416px] h-[44px] rounded-lg border-[#0CA5E9] border border-solid flex gap-3 bg-white pl-2 mb-4"> 
             <input 
