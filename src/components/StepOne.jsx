@@ -1,20 +1,14 @@
 export const Card1 = ({
-    setCurrentStep,
-    inputValue, 
-    inputChange,
-    onClick,
+    onChange,
+    onClickNext,
+    inputValue,
     firstName,
     lastName,
-    userName, 
-}) => {
-
-    const validate =()=>{
-        if (firstName === '' && lastName === '' && userName === '') {
-            return false;
-        }; 
-        return true;
-    };
-    
+    userName,
+    borderColor1,
+    borderColor2,
+    borderColor3, 
+}) => {   
     return( 
         <div className="bg-[#FFFFFF] text-black rounded-lg w-[480px] h-[655px] flex flex-col items-start">
             <div className="p-[32px]">
@@ -26,21 +20,21 @@ export const Card1 = ({
                 <div className="w-416px] h-[270px] flex flex-col justify-between">
                     <p className="text-sm font-semibold text-[#8E8E8E] mt-[10px]">First Name *</p> 
                     <input 
-                        className="text-black w-[416px] h-[44px] rounded-lg border-[#0CA5E9] border border-solid flex gap-3 bg-white pl-2 mb-4"
+                        className={`text-black w-[416px] h-[44px] rounded-lg border-[#0CA5E9] ${borderColor1} border border-solid flex gap-3 bg-white pl-2 mb-4`}
                         id="firstName" 
                         value={inputValue}  
-                        onChange={inputChange}  
+                        onChange={onChange}  
                         placeholder={'Enter your firstname...'} 
                         type='text'
-                    />
+                    /> 
                     <p className="text-red-700 text-[14px]">{firstName}</p>
 
                     <p className="text-sm font-semibold text-[#8E8E8E] mt-[10px]">Last Name *</p>
                     <input 
-                        className="text-black w-[416px] h-[44px] rounded-lg border-[#0CA5E9] border border-solid flex gap-3 bg-white pl-2 mb-4"
+                        className={`text-black w-[416px] h-[44px] rounded-lg border-[#0CA5E9] ${borderColor2} border border-solid flex gap-3 bg-white pl-2 mb-4`}
                         id="lastName" 
                         value={inputValue} 
-                        onChange={inputChange} 
+                        onChange={onChange} 
                         placeholder={'Enter your lastname...'} 
                         type='text' 
                     />
@@ -48,10 +42,10 @@ export const Card1 = ({
 
                     <p className="text-sm font-semibold text-[#8E8E8E] mt-[10px]">Username *</p> 
                     <input
-                        className="text-black w-[416px] h-[44px] rounded-lg border-[#0CA5E9] border border-solid flex gap-3 bg-white pl-2 mb-4"
+                        className={`text-black w-[416px] h-[44px] rounded-lg border-[#0CA5E9] ${borderColor3} border border-solid flex gap-3 bg-white pl-2 mb-4`}
                         id="userName" 
                         value={inputValue}  
-                        onChange={inputChange} 
+                        onChange={onChange} 
                         placeholder={'Enter your username...'}
                         type='text'
                     />  
@@ -60,8 +54,8 @@ export const Card1 = ({
                 <div className="w-[416px] h-[44px] flex flex-col mt-[140px]">
                     <button
                         className="flex justify-center items-center bg-[#D6D8DB] text-[#334155] w-[416px] h-[44px] border border-[#D6D8DB] rounded-lg"
-                        disabled={validate()} 
-                        onClick={onClick}>
+                         
+                        onClick={onClickNext}>
                         {"Continue 1/3 >"}
                     </button> 
                 </div>
@@ -69,3 +63,6 @@ export const Card1 = ({
         </div> 
     );
 }; 
+
+//  propsoor function useState ali n ch ywj bolhimu? yess..
+//  gadnaas hergelj bga ymaa propsoor oruulj irsen tgd deer butsaagaad ingej ashiglasan shu gd export hijigamu? yess..

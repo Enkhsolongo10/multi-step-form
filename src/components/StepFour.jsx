@@ -1,4 +1,4 @@
-export const StepFour = () => {
+export const Card4 = () => {
     return(
         <div className="bg-[#FFFFFF] w-[450px] h-[180px] pl-[30px] pt-[30px] text-black flex flex-col items-start mb-[600px] rounded-lg">
              <img className="w-[60px] h-[60px]" src="/logo.svg" alt="mainLogo"></img>
