@@ -11,15 +11,15 @@ export const validateStepOne = (form) => {
         userName:""
     }
     console.log(form, 'validate')
-    if(form.firstName ===''){
-        isValid = false;
-        newErrors.firstName = "It cannot be empty."
-    }
+   
     if(!NAME_REGEX.test(form.firstName)){
         isValid = false;
         newErrors.firstName = "Firstname cannot contain special characters or numbers."
     }
-
+ if(form.firstName ===''){
+        isValid = false;
+        newErrors.firstName = "It cannot be empty."
+    }
     if(form.lastName ===''){
         isValid = false;
         newErrors.lastName = "It cannot be empty."

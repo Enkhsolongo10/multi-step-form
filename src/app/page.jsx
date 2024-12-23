@@ -48,12 +48,7 @@ export default function Home() {
   const [secondButtonColor, setSecondButtonColor] = useState("");
   
   useEffect(()=>{
-    const allErrors = [
-      error.firstName, 
-      error.lastName, 
-      error.userName
-    ];
-      if (allErrors.firstName != '') {
+      if (error.firstName != '') {
         setBorderColor1("border:[#E14942]")
     } 
   }, [error]); 
@@ -65,7 +60,7 @@ export default function Home() {
     console.log(newValues)
     setInputValue(newValues);
 
-    const {isValid, newErrors} = validateStepOne(form);
+    const {isValid, newErrors} = validateStepOne(newValues);
     
       console.log(newErrors,'errrororororoo')
     setError(newErrors)
@@ -95,7 +90,7 @@ export default function Home() {
           inputValue={inputValue}
           onChange={inputChange} //end onChange gej nerlcheed StepOne dree onChange gj uguh l heregtei bsn !!!zgeerl StepOne neree export hiisen! 
           onClickNext={nextCard}
-          newErrors={newErrors}
+          errors={error}
           borderColor1={borderColor1} 
           borderColor2={borderColor2}
           borderColor3={borderColor3}
