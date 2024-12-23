@@ -22,20 +22,20 @@ export const validateStepOne = (form) => {
 
     if(form.lastName ===''){
         isValid = false;
-        newErrors.firstName = "It cannot be empty."
+        newErrors.lastName = "It cannot be empty."
     }
     if(!NAME_REGEX.test(form.lastName)){
         isValid = false;
-        newErrors.firstName = "Lastname cannot contain special characters or numbers."
+        newErrors.lastName = "Lastname cannot contain special characters or numbers."
     }
 
     if(form.userName ===''){
         isValid = false;
-        newErrors.firstName = "It cannot be empty."
+        newErrors.userName = "It cannot be empty."
     }
     if(!NAME_REGEX.test(form.userName)){
         isValid = false;
-        newErrors.firstName = "Username cannot contain special characters or numbers."
+        newErrors.userName = "Username cannot contain special characters or numbers."
     } 
 
     return {isValid, newErrors}

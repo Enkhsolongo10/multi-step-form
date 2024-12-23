@@ -53,40 +53,20 @@ export default function Home() {
       error.lastName, 
       error.userName
     ];
-    let  checkErrors = false;
-    for (let i=0; i < allErrors.length; i++) {
-      if (allErrors[i] != '') {
-        checkErrors = true;
-      };   
-    };
-  }, [error]);
-
-  useEffect(()=>{
-    const allErrors = [
-      error.email, 
-      error.phoneNumber, 
-      error.password, 
-      error.confirmPassword
-    ];
-    let checkErrors = false;
-    for (let i = 0; i < allErrors.length; i++) {
-      if (allErrors[i] != '') {
-        checkErrors = true;
-      };
-    };
-  }); 
-  console.log(inputValue)
+      if (allErrors.firstName != '') {
+        setBorderColor1("border:[#E14942]")
+    } 
+  }, [error]); 
 
   const inputChange = (e)=> {
-
     const inputId = e.target.id;
     console.log(inputId)
     const newValues = {...inputValue, [inputId]: e.target.value}
     console.log(newValues)
     setInputValue(newValues);
 
-    const {isValid, newErrors} = validateStepOne(inputValue);
-    // const {isValidTwo, newErrorsTwo} = validateStepTwo(inputValue);
+    const {isValid, newErrors} = validateStepOne(form);
+    
       console.log(newErrors,'errrororororoo')
     setError(newErrors)
     if(newErrors.firstName !== ""){
@@ -98,13 +78,6 @@ export default function Home() {
     if(newErrors.userName !== ""){
       setBorderColor3("border:[#E14942]")
     } 
-
-    // setError(newErrorsTwo)
-    // if(newErrorsTwo.email != ""){
-    //   setBorderColor4("border:[#E14942]")
-    // }
-  
-   
   }; 
   
   const nextCard = ()=>{
@@ -119,9 +92,10 @@ export default function Home() {
       <div className="bg-stone-300 w-full h-screen flex justify-center items-center">
         {currentStep === 1 && (
           <Card1
-          value={inputValue}
+          inputValue={inputValue}
           onChange={inputChange} //end onChange gej nerlcheed StepOne dree onChange gj uguh l heregtei bsn !!!zgeerl StepOne neree export hiisen! 
           onClickNext={nextCard}
+          newErrors={newErrors}
           borderColor1={borderColor1} 
           borderColor2={borderColor2}
           borderColor3={borderColor3}
@@ -129,7 +103,7 @@ export default function Home() {
         )}
          {currentStep === 2 && (
           <Card2
-          value={inputValue}
+          inputValue={inputValue}
           onChange={inputChange}
           onClickBack={backCard}
           onClickNext={nextCard}
@@ -138,7 +112,7 @@ export default function Home() {
 
          {currentStep === 3 && (
           <Card3
-          value={inputValue}
+          inputValue={inputValue}
           onChange={inputChange}
           onClickBack={backCard}
           onClickNext={nextCard}
