@@ -34,4 +34,4 @@ export const Card3 = ({
             </div>
         </div>
     );
-}; 
+};

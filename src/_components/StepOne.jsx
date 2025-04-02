@@ -5,7 +5,7 @@ export const Card1 = ({
     borderColor1,
     borderColor2,
     borderColor3, 
-    errors
+    errors,
 }) => {   
     return( 
         <div className="bg-[#FFFFFF] text-black rounded-lg w-[480px] min-h-[655px] flex flex-col items-start">
@@ -59,8 +59,8 @@ export const Card1 = ({
                 </div>
             </div>
         </div> 
-    );
-}; 
+    )
+}
 
 //  propsoor function useState ali n ch ywj bolhimu? yess..
 //  gadnaas hergelj bga ymaa propsoor oruulj irsen tgd deer butsaagaad ingej ashiglasan shu gd export hijigamu? yess..

@@ -1,18 +1,15 @@
 'use client'; 
-
 import Image from "next/image";
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { Card1 } from '@/Components/StepOne';
-import { Card2 } from '@/Components/StepTwo';
-import { Card3 } from '@/Components/StepThree';
-import { Card4 } from '@/Components/StepFour';
+import { Card1 } from '@/_components/StepOne';
+import { Card2 } from '@/_components/StepTwo';
+import { Card3 } from '@/_components/StepThree';
+import { Card4 } from '@/_components/StepFour';
 import { validateStepOne, validateStepTwo } from "@/helpers/validation";
 
 export default function Home() {
-
   const [currentStep, setCurrentStep] = useState(1);
-
   const [inputValue, setInputValue] = useState({ 
     firstName: '',
     lastName: '',
@@ -24,7 +21,6 @@ export default function Home() {
     dateOfBirth:'',
     profileImage:'',
   });
-  
   const [error, setError] = useState({
     firstName: '',
     lastName: '',
@@ -36,7 +32,6 @@ export default function Home() {
     dateOfBirth:'',
     profileImage:'',
   });
-
   const [borderColor1, setBorderColor1] = useState("focus:border-[#CBD5E1]");
   const [borderColor2, setBorderColor2] = useState("focus:border-[#CBD5E1]");
   const [borderColor3, setBorderColor3] = useState("focus:border-[#CBD5E1]");
@@ -50,8 +45,8 @@ export default function Home() {
   useEffect(()=>{
       if (error.firstName != '') {
         setBorderColor1("border:[#E14942]")
-    } 
-  }, [error]); 
+    }
+  }, [error]);
 
   const inputChange = (e)=> {
     const inputId = e.target.id;
@@ -61,7 +56,6 @@ export default function Home() {
     setInputValue(newValues);
 
     const {isValid, newErrors} = validateStepOne(newValues);
-    
       console.log(newErrors,'errrororororoo')
     setError(newErrors)
     if(newErrors.firstName !== ""){
@@ -73,11 +67,12 @@ export default function Home() {
     if(newErrors.userName !== ""){
       setBorderColor3("border:[#E14942]")
     } 
-  }; 
-  
+  };
+
   const nextCard = ()=>{
     setCurrentStep(currentStep+1);
   };
+
   const backCard = ()=>{
     setCurrentStep(currentStep-1);
   };
@@ -95,8 +90,8 @@ export default function Home() {
           borderColor2={borderColor2}
           borderColor3={borderColor3}
           />
-        )}
-         {currentStep === 2 && (
+        )} 
+        {currentStep === 2 && (
           <Card2
           inputValue={inputValue}
           onChange={inputChange}
@@ -104,7 +99,6 @@ export default function Home() {
           onClickNext={nextCard}
           />
         )} 
-
          {currentStep === 3 && (
           <Card3
           inputValue={inputValue}
