@@ -2,10 +2,10 @@
 import Image from "next/image";
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { Card1 } from '@/_components/StepOne';
-import { Card2 } from '@/_components/StepTwo';
-import { Card3 } from '@/_components/StepThree';
-import { Card4 } from '@/_components/StepFour';
+import { Card1 } from '@/app/_components/StepOne';
+import { Card2 } from '@/app/_components/StepTwo';
+import { Card3 } from '@/app/_components/StepThree';
+import { Card4 } from '@/app/_components/StepFour';
 import { validateStepOne, validateStepTwo } from "@/helpers/validation";
 
 export default function Home() {
@@ -97,6 +97,7 @@ export default function Home() {
           onChange={inputChange}
           onClickBack={backCard}
           onClickNext={nextCard}
+          errors={error}
           />
         )} 
          {currentStep === 3 && (
