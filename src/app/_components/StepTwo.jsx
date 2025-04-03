@@ -8,7 +8,7 @@ export const Card2 = ({
     borderColor5,
     borderColor6,
     borderColor7,
-}) => { 
+}) => {
 
     return(
         <div className="bg-[#FFFFFF] text-black rounded-lg w-[480px] h-[655px] flex flex-col items-start">
