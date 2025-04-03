@@ -42,19 +42,19 @@ export default function Home() {
   const [firstbuttonColor, setfirstButtonColor] = useState("");
   const [secondButtonColor, setSecondButtonColor] = useState("");
   
-  useEffect(()=>{
-      if (error.firstName != '') {
-        setBorderColor1("border:[#E14942]")
-    }
-  }, [error]);
+  // useEffect(()=>{
+  //     if (error.firstName != '') {
+  //       setBorderColor1("border:[#E14942]")
+  //   }
+  // }, [error]);
 
   const inputChange = (e)=> {
     const inputId = e.target.id;
-    console.log(inputId)
+      console.log(inputId)
     const newValues = {...inputValue, [inputId]: e.target.value}
-    console.log(newValues)
+      console.log(newValues)
     setInputValue(newValues);
-
+    
     const {isValid, newErrors} = validateStepOne(newValues);
       console.log(newErrors,'errrororororoo')
     setError(newErrors)
@@ -69,6 +69,31 @@ export default function Home() {
     } 
   };
 
+  const inputChangeTwo = (e)=> {
+    const inputId = e.target.id;
+      console.log(inputId)
+    const newValues = {...inputValue, [inputId]: e.target.value}
+      console.log(newValues)
+    setInputValue(newValues);
+      console.log(newValues)
+
+    const {isValidTwo, newErrorsTwo} = validateStepTwo(newValues);
+      console.log(newErrorsTwo,'errrororororoo')    
+    setError(newErrorsTwo)
+    if(newErrorsTwo.email !== ""){
+      setBorderColor4("border:[#E14942]")
+    }
+    if(newErrorsTwo.phoneNumber !== ""){
+      setBorderColor5("border:[#E14942]")
+    } 
+    if(newErrorsTwo.password !== ""){
+      setBorderColor6("border:[#E14942]")
+    } 
+    if(newErrorsTwo.confirmPassword !== ""){
+      setBorderColor7("border:[#E14942]")
+    } 
+  };
+  
   const nextCard = ()=>{
     setCurrentStep(currentStep+1);
   };
@@ -94,12 +119,16 @@ export default function Home() {
         {currentStep === 2 && (
           <Card2
           inputValue={inputValue}
-          onChange={inputChange}
+          onChange={inputChangeTwo}
           onClickBack={backCard}
           onClickNext={nextCard}
           errors={error}
+          borderColor4={borderColor4} 
+          borderColor5={borderColor5}
+          borderColor6={borderColor6}
+          borderColor7={borderColor7}
           />
-        )} 
+        )}
          {currentStep === 3 && (
           <Card3
           inputValue={inputValue}
