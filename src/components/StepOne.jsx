@@ -2,10 +2,10 @@ export const Card1 = ({
     onChange,
     onClickNext,
     inputValue,
+    errors,
     borderColor1,
     borderColor2,
     borderColor3, 
-    errors
 }) => {   
     return( 
         <div className="bg-[#FFFFFF] text-black rounded-lg w-[480px] min-h-[655px] flex flex-col items-start">

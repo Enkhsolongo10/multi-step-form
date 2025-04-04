@@ -47,34 +47,53 @@ export default function Home() {
   const [firstbuttonColor, setfirstButtonColor] = useState("");
   const [secondButtonColor, setSecondButtonColor] = useState("");
   
-  useEffect(()=>{
-      if (error.firstName != '') {
-        setBorderColor1("border:[#E14942]")
-    } 
-  }, [error]); 
+  // useEffect(()=>{
+  //     if (error.firstName != '') {
+  //       setBorderColor1("border:[#E14942]")
+  //   } 
+  // }, [error]); 
 
   const inputChange = (e)=> {
     const inputId = e.target.id;
     console.log(inputId)
     const newValues = {...inputValue, [inputId]: e.target.value}
     console.log(newValues)
+
     setInputValue(newValues);
 
     const {isValid, newErrors} = validateStepOne(newValues);
-    
-      console.log(newErrors,'errrororororoo')
-    setError(newErrors)
-    if(newErrors.firstName !== ""){
-      setBorderColor1("border:[#E14942]")
-    }
-    if(newErrors.lastName !== ""){
-      setBorderColor2("border:[#E14942]")
-    } 
-    if(newErrors.userName !== ""){
-      setBorderColor3("border:[#E14942]")
-    } 
-  }; 
+      console.log(newErrors,'error ajillaj bnu?')
+    const {isValidTwo, newErrorsTwo} = validateStepTwo(newValues);
+      
+      setError(newErrors)
+      
+      if(newErrors.firstName !== ""){
+        setBorderColor1("border:[#E14942]")
+      }
+      if(newErrors.lastName !== ""){
+        setBorderColor2("border:[#E14942]")
+      } 
+      if(newErrors.userName !== ""){
+        setBorderColor3("border:[#E14942]")
+      }
+      
+      if(newErrorsTwo.email !== ""){
+        setBorderColor4("border:[#E14942]")
+      }
+      if(newErrorsTwo.phoneNumber !== ""){
+        setBorderColor5("border:[#E14942]")
+      }
+      if(newErrorsTwo.password !== ""){
+        setBorderColor6("border:[#E14942]")
+      }
+      if(newErrorsTwo.confirmPassword !== ""){
+        setBorderColor7("border:[#E14942]")
+      }
+  };
   
+
+
+
   const nextCard = ()=>{
     setCurrentStep(currentStep+1);
   };
@@ -93,7 +112,7 @@ export default function Home() {
           errors={error}
           borderColor1={borderColor1} 
           borderColor2={borderColor2}
-          borderColor3={borderColor3}
+          borderColor3={borderColor3} 
           />
         )}
          {currentStep === 2 && (
@@ -102,6 +121,11 @@ export default function Home() {
           onChange={inputChange}
           onClickBack={backCard}
           onClickNext={nextCard}
+          errors={error}
+          borderColor4={borderColor4}
+          borderColor5={borderColor5}
+          borderColor6={borderColor6}
+          borderColor7={borderColor7}
           />
         )} 
 
