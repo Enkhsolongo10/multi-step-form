@@ -6,6 +6,10 @@ export const Card1 = ({
     borderColor1,
     borderColor2,
     borderColor3, 
+<<<<<<< HEAD:src/components/StepOne.jsx
+=======
+    errors,
+>>>>>>> 67f22d264cd31832fc1f85e5d444889b5c94a457:src/app/_components/StepOne.jsx
 }) => {   
     return( 
         <div className="bg-[#FFFFFF] text-black rounded-lg w-[480px] min-h-[655px] flex flex-col items-start">
@@ -59,8 +63,8 @@ export const Card1 = ({
                 </div>
             </div>
         </div> 
-    );
-}; 
+    )
+}
 
 //  propsoor function useState ali n ch ywj bolhimu? yess..
 //  gadnaas hergelj bga ymaa propsoor oruulj irsen tgd deer butsaagaad ingej ashiglasan shu gd export hijigamu? yess..

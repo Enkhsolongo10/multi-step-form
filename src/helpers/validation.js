@@ -3,7 +3,6 @@ const NAME_REGEX = /[a-zA-Z]{2,}/
 const NUMBER_REGEX = /[0-9]{8,}/
 const PASSWORD_REGEX = /[A-Za-z0-9@#$%&!]{8,}/
 
-
 export const validateStepOne = (form) => {
     let isValid = true;
     let newErrors ={
@@ -52,7 +51,7 @@ export const validateStepTwo = (formTwo) => {
         confirmPassword:"",
     }
 
-    if(!EMAIL_REGEX.test(form.email)){
+    if(!EMAIL_REGEX.test(formTwo.email)){
         isValidTwo: false;
         newErrorsTwo.email = "Please provide a valid email address."
     }
@@ -60,7 +59,7 @@ export const validateStepTwo = (formTwo) => {
         isValidTwo = false;
         newErrorsTwo.email = "It cannot be empty."
     }
-
+ 
     if(!NUMBER_REGEX.test(formTwo.phoneNumber) === ''){
         isValidTwo = false;
         newErrorsTwo.phoneNumber =  "Please enter a valid phone number."
@@ -70,28 +69,26 @@ export const validateStepTwo = (formTwo) => {
         newErrorsTwo.phoneNumber = "It cannot be empty."
     }
 
-    if(!PASSWORD_REGEX.test(form.password) === ''){
+    if(!PASSWORD_REGEX.test(formTwo.password) === ''){
         isValidTwo =false;
         newErrorsTwo.password = "Please enter a valid phone number."
     }
     if(formTwo.password === ''){
-        isValid = false;
+        isValidTwo = false;
         newErrorsTwo.password = "It cannot be empty."
     } 
 
-    if(!PASSWORD_REGEX.test(form.confirmPassword) === ''){
+    if(!PASSWORD_REGEX.test(formTwo.confirmPassword) === ''){
         isValidTwo =false;
         newErrorsTwo.confirmPassword = "Please enter a valid phone number."
     }
     if(formTwo.password === ''){
-        isValid = false;
+        isValidTwo = false;
         newErrorsTwo.confirmPassword = "It cannot be empty."
     } 
 
     return {isValidTwo, newErrorsTwo}
 }; 
-
-
 
 export const Validation=()=>{
 
