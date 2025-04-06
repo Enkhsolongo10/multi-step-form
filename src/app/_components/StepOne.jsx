@@ -1,4 +1,6 @@
-export const Card1 = ({
+"use client"
+import React from 'react'
+export const StepOne = ({
     onChange,
     onClickNext,
     inputValue,
@@ -6,7 +8,6 @@ export const Card1 = ({
     borderColor1,
     borderColor2,
     borderColor3, 
-    errors,
 }) => {   
     return( 
         <div className="bg-[#FFFFFF] text-black rounded-lg w-[480px] min-h-[655px] flex flex-col items-start">

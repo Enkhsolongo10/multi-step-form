@@ -2,10 +2,10 @@
 import Image from "next/image";
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { Card1 } from '@/app/_components/StepOne';
-import { Card2 } from '@/app/_components/StepTwo';
-import { Card3 } from '@/app/_components/StepThree';
-import { Card4 } from '@/app/_components/StepFour';
+import { StepOne } from '@/app/_components/StepOne';
+import { StepTwo } from '@/app/_components/StepTwo';
+import { StepThree } from '@/app/_components/StepThree';
+import { StepFour } from '@/app/_components/StepFour';
 import { validateStepOne, validateStepTwo } from "@/helpers/validation";
 
 export default function Home() {
@@ -42,11 +42,11 @@ export default function Home() {
   const [firstbuttonColor, setfirstButtonColor] = useState("");
   const [secondButtonColor, setSecondButtonColor] = useState("");
   
-  // useEffect(()=>{
-  //     if (error.firstName != '') {
-  //       setBorderColor1("border:[#E14942]")
-  //   }
-  // }, [error]);
+  useEffect(()=>{
+      if (error.firstName != '') {
+        setBorderColor1("border:[#E14942]")
+    }
+  }, [error]);
 
   const inputChange = (e)=> {
     const inputId = e.target.id;
@@ -102,11 +102,22 @@ export default function Home() {
     setCurrentStep(currentStep-1);
   };
 
+  const inputChangeThree = (e)=> {
+    const inputId = e.target.id;
+      console.log(inputId)
+    const newValues = {...inputValue, [inputId]: e.target.value}
+      console.log(newValues)
+    setInputValue(newValues);
+    const {isValidTwo, newErrorsTwo} = validateStepTwo(newValues);
+    console.log(newErrorsTwo,'errrororororoo')    
+  setError(newErrorsTwo)
+};
+
   return (
     <>
       <div className="bg-stone-300 w-full h-screen flex justify-center items-center">
         {currentStep === 1 && (
-          <Card1
+          <StepOne
           inputValue={inputValue}
           onChange={inputChange} //end onChange gej nerlcheed StepOne dree onChange gj uguh l heregtei bsn !!!zgeerl StepOne neree export hiisen! 
           onClickNext={nextCard}
@@ -117,7 +128,7 @@ export default function Home() {
           />
         )} 
         {currentStep === 2 && (
-          <Card2
+          <StepTwo
           inputValue={inputValue}
           onChange={inputChangeTwo}
           onClickBack={backCard}
@@ -130,16 +141,17 @@ export default function Home() {
           />
         )}
          {currentStep === 3 && (
-          <Card3
+          <StepThree
           inputValue={inputValue}
-          onChange={inputChange}
+          onChange={inputChangeThree}
           onClickBack={backCard}
           onClickNext={nextCard}
+          errors={error}
           />
         )}
 
          {currentStep === 4 && (
-          <Card4/>
+          <StepFour/>
         )}
       </div>
     </>

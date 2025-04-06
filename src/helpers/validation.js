@@ -2,6 +2,8 @@ const EMAIL_REGEX = /[A-Za-z0-9]+@+[a-zA-Z]+\.+[a-zA-Z]{2,}/
 const NAME_REGEX = /[a-zA-Z]{2,}/
 const NUMBER_REGEX = /[0-9]{8,}/
 const PASSWORD_REGEX = /[A-Za-z0-9@#$%&!]{8,}/
+const DATEOFBIRTH_REGEX = /^(19|20)\d{2}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/;
+
 
 export const validateStepOne = (form) => {
     let isValid = true;
@@ -52,14 +54,14 @@ export const validateStepTwo = (formTwo) => {
     }
 
     if(!EMAIL_REGEX.test(formTwo.email)){
-        isValidTwo: false;
+        isValidTwo = false;
         newErrorsTwo.email = "Please provide a valid email address."
     }
     if(formTwo.email === ''){
         isValidTwo = false;
         newErrorsTwo.email = "It cannot be empty."
     }
- 
+
     if(!NUMBER_REGEX.test(formTwo.phoneNumber) === ''){
         isValidTwo = false;
         newErrorsTwo.phoneNumber =  "Please enter a valid phone number."
@@ -90,8 +92,19 @@ export const validateStepTwo = (formTwo) => {
     return {isValidTwo, newErrorsTwo}
 }; 
 
-export const Validation=()=>{
-
+export const validateStepThree = (formThree) => {
+    let isValidThree = true;
+    let newErrorsThree = {
+        dateOfBirth: "",
+        profileImage: ""
+    }
+    if(!DATEOFBIRTH_REGEX.test(formThree.dateOfBirth)){
+        isValidThree = false;
+        newErrorsThree.dateOfBirth = "Please enter a valid date of birth."
+    }
+    return
 }
+
+export const Validation=()=>{}
     
 

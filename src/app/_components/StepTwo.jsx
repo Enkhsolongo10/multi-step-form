@@ -1,4 +1,4 @@
-export const Card2 = ({
+export const StepTwo = ({
     onChange,
     inputValue,
     onClickNext,
@@ -24,10 +24,10 @@ export const Card2 = ({
                 <p className="text-sm font-semibold text-[#8E8E8E] mt-[10px]">Email *</p> 
                 <input 
                     className={`text-black w-[416px] h-[44px] rounded-lg border-[#0CA5E9] border ${borderColor4} border-solid flex gap-3 bg-white pl-2 mb-4`}
-                    id="firstName" 
+                    id="email" 
                     value={inputValue.email}  
                     onChange={onChange}
-                    placeholder={'Enter your firstname...'} 
+                    placeholder={'Enter your email...'} 
                     type='text'
                 />
                 <p className="text-red-700 text-[14px]">{errors.email}</p>
@@ -35,10 +35,10 @@ export const Card2 = ({
                 <p className="text-sm font-semibold text-[#8E8E8E] mt-[10px]">Phone number *</p>
                 <input 
                     className={`text-black w-[416px] h-[44px] rounded-lg border-[#0CA5E9] border ${borderColor5} border-solid flex gap-3 bg-white pl-2 mb-4`}
-                    id="lastName" 
+                    id="phoneNumber" 
                     value={inputValue.phoneNumber} 
                     onChange={onChange} 
-                    placeholder={'Enter your lastname...'} 
+                    placeholder={'Enter your phone number...'} 
                     type='text' 
                 />
                 <p className="text-red-700 text-[14px]">{errors.phoneNumber}</p>
@@ -46,10 +46,10 @@ export const Card2 = ({
                 <p className="text-sm font-semibold text-[#8E8E8E] mt-[10px]">Password *</p> 
                 <input
                     className={`text-black w-[416px] h-[44px] rounded-lg border-[#0CA5E9] border ${borderColor6} border-solid flex gap-3 bg-white pl-2 mb-4`}
-                    id="userName" 
+                    id="password" 
                     value={inputValue.password}  
                     onChange={onChange} 
-                    placeholder={'Enter your username...'}
+                    placeholder={'Enter your password...'}
                     type='text'
                 />  
                 <p className="text-red-700 text-[14px]">{errors.password}</p>
@@ -57,10 +57,10 @@ export const Card2 = ({
                 <p className="text-sm font-semibold text-[#8E8E8E] mt-[10px]">Confirm Password *</p> 
                 <input
                     className={`text-black w-[416px] h-[44px] rounded-lg border-[#0CA5E9] border ${borderColor7} border-solid flex gap-3 bg-white pl-2 mb-4`}
-                    id="userName" 
+                    id="confirmPassword" 
                     value={inputValue.confirmPassword}  
                     onChange={onChange} 
-                    placeholder={'Enter your username...'}
+                    placeholder={'Enter your confirm password...'}
                     type='text'
                 />  
                 <p className="text-red-700 text-[14px]">{errors.confirmPassword}</p>
