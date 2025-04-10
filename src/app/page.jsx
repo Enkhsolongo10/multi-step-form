@@ -34,7 +34,7 @@ export default function Home () {
       onChange={onChange}
       form={form}
       />
-    </div>
+    </div> 
   );
 }
 
