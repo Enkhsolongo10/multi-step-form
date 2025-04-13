@@ -1,13 +1,12 @@
 "use client"
+import { FormInput } from 'postcss'
 import React from 'react'
 export const StepOne = ({
+    setCurrentStep,
     onChange,
-    onClickNext,
-    inputValue,
-    errors,
-    borderColor1,
-    borderColor2,
-    borderColor3, 
+    form,
+    error,
+    setError
 }) => {   
     return( 
         <div className="bg-[#FFFFFF] text-black rounded-lg w-[480px] min-h-[655px] flex flex-col items-start">
@@ -19,36 +18,36 @@ export const StepOne = ({
                 </div>
                 <div className="w-416px] flex flex-col justify-between">
                     <p className="text-sm font-semibold text-[#8E8E8E] mt-[10px]">First Name *</p> 
-                    <input 
+                    <FormInput
                         className={`text-black w-[416px] h-[44px] rounded-lg border-[#0CA5E9] ${borderColor1} border border-solid flex gap-3 bg-white pl-2 mb-4`}
                         id="firstName" 
-                        value={inputValue.firstName}  
+                        value={form.firstName}  
                         onChange={onChange}  
                         placeholder={'Enter your firstname...'} 
                         type='text'
                     /> 
-                    <p className="text-red-700 text-[14px]">{errors.firstName}</p>
+                    <p className="text-red-700 text-[14px]">{error.firstName}</p>
 
                     <p className="text-sm font-semibold text-[#8E8E8E] mt-[10px]">Last Name *</p>
-                    <input 
-                        className={`text-black w-[416px] h-[44px] rounded-lg border-[#0CA5E9] ${borderColor2} border border-solid flex gap-3 bg-white pl-2 mb-4`}
-                        id="lastName" 
-                        value={inputValue.lastName} 
-                        onChange={onChange} 
-                        placeholder={'Enter your lastname...'} 
-                        type='text' 
-                    />
+                    <FormInput
+                        className={`text-black w-[416px] h-[44px] rounded-lg border-[#0CA5E9] ${borderColor1} border border-solid flex gap-3 bg-white pl-2 mb-4`}
+                        id="firstName" 
+                        value={form.firstName}  
+                        onChange={onChange}  
+                        placeholder={'Enter your firstname...'} 
+                        type='text'
+                    /> 
                     <p className="text-red-700 text-[14px]">{errors.lastName}</p>
 
                     <p className="text-sm font-semibold text-[#8E8E8E] mt-[10px]">Username *</p> 
-                    <input
-                        className={`text-black w-[416px] h-[44px] rounded-lg border-[#0CA5E9] ${borderColor3} border border-solid flex gap-3 bg-white pl-2 mb-4`}
-                        id="userName" 
-                        value={inputValue.userName}  
-                        onChange={onChange} 
-                        placeholder={'Enter your username...'}
+                    <FormInput
+                        className={`text-black w-[416px] h-[44px] rounded-lg border-[#0CA5E9] ${borderColor1} border border-solid flex gap-3 bg-white pl-2 mb-4`}
+                        id="firstName" 
+                        value={form.firstName}  
+                        onChange={onChange}  
+                        placeholder={'Enter your firstname...'} 
                         type='text'
-                    />  
+                    /> 
                     <p className="text-red-700 text-[14px]">{errors.userName}</p>
                 </div> 
                 <div className="w-[416px] h-[44px] flex flex-col mt-[140px]">
