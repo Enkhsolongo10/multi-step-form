@@ -3,10 +3,6 @@ import Image from "next/image";
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { StepOne } from '@/app/_components/StepOne';
-import { StepTwo } from '@/app/_components/StepTwo';
-import { StepThree } from '@/app/_components/StepThree';
-import { StepFour } from '@/app/_components/StepFour';
-import { validateStepOne, validateStepTwo } from "@/helpers/validation";
 
 const FormBody = ({
   currentStep,

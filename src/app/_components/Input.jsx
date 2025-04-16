@@ -2,7 +2,6 @@ export const FormInput = ({
     id, 
     type, 
     placeholder,
-    label, 
     value, 
     onChange, 
     error, 
@@ -23,4 +22,4 @@ export const FormInput = ({
             />
         </div> 
     );
-}; 
+};
